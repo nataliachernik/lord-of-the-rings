@@ -11,3 +11,8 @@ export type Movie = {
     _id: string,
     name: string
 }
+
+export type Character = {
+    _id: string,
+    name: string
+}

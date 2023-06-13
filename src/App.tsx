@@ -1,6 +1,7 @@
 import React from 'react';
 
-import MoviesWrapper from './components/movies/MoviesWrapper'
+import Movies from './components/movies/Movies'
+import Characters from './components/characters/Characters'
 
 import logo from './logo.svg';
 import './App.css';
@@ -22,7 +23,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <MoviesWrapper />
+      <Movies />
+      <Characters />
     </div>
   );
 }

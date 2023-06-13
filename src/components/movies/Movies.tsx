@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import fetchData from '../../api/fetchData'
-import {Movie} from '../../models'
+import {GeneralResponse, Movie} from '../../models'
 
 const Movies = () => {
     const [movies, setMovies] = useState<Movie[]>([])
@@ -14,7 +14,7 @@ const Movies = () => {
             setError(false)
 
             try {
-                const { docs: data } = await fetchData('movie')
+                const {docs: data} = await fetchData<GeneralResponse<Movie>>('movie')
                 setMovies(data)
             } catch (e) {
                 setError(true)
@@ -34,7 +34,7 @@ const Movies = () => {
         return <p>Failed to load movies.</p>
     }
 
-    const renderMovies = movies.map((movie: {_id: string, name: string}) => {
+    const renderMovies = movies.map(movie => {
         return (
             <p key={movie._id}>
                 {movie.name}
