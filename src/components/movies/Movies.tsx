@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import fetchData from '../../api/fetchData'
 import {GeneralResponse, Movie} from '../../models'
+import Tile from './tile/Tile'
+import TileGrid from '../../common/components/TileGrid/TileGrid'
 
 const Movies = () => {
     const [movies, setMovies] = useState<Movie[]>([])
@@ -34,18 +36,14 @@ const Movies = () => {
         return <p>Failed to load movies.</p>
     }
 
-    const renderMovies = movies.map(movie => {
-        return (
-            <p key={movie._id}>
-                {movie.name}
-            </p>
-        )
-    })
-
     return (
         <>
             <h2>Movies</h2>
-            <div className="movies">{renderMovies}</div>
+            <TileGrid>
+                {movies.map(movie => (
+                    <Tile movie={movie} key={movie._id} />
+                ))}
+            </TileGrid>
         </>
     )
 }

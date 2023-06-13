@@ -4,6 +4,8 @@ import clsx from 'clsx'
 
 import fetchData from '../../api/fetchData'
 import {GeneralResponse, Character} from '../../models'
+import TileGrid from '../../common/components/TileGrid/TileGrid'
+import Tile from './tile/Tile'
 
 import styles from './Characters.module.css'
 
@@ -53,18 +55,16 @@ const Characters = () => {
         setPage(event.selected + 1)
     };
 
-    const renderCharacters = characters.map(character => {
-        return (
-            <p key={character._id}>
-                {character.name}
-            </p>
-        )
-    })
-
     return (
         <>
             <h2>Characters</h2>
-            <div className={clsx(loading && styles.loadingCharacters)}>{renderCharacters}</div>
+            <div className={clsx(loading && styles.loadingCharacters)}>
+                <TileGrid>
+                    {characters.map(character => (
+                        <Tile character={character} key={character._id} />
+                    ))}
+                </TileGrid>
+            </div>
             {!!pageCount &&
                 <ReactPaginate
                     breakLabel="..."
