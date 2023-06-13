@@ -1,4 +1,7 @@
 import React from 'react';
+
+import MoviesWrapper from './components/movies/MoviesWrapper'
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,6 +22,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <MoviesWrapper />
     </div>
   );
 }
