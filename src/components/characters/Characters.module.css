@@ -1,0 +1,7 @@
+.loadingCharacters {
+    opacity: 0.5;
+}
+
+.disabledPagination {
+    pointer-events: none;
+}

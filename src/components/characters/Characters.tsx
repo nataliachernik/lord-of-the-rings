@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
+import clsx from 'clsx'
 
 import fetchData from '../../api/fetchData'
 import {GeneralResponse, Character} from '../../models'
 
+import styles from './Characters.module.css'
+
 const limitPerPage = 12
+const pageLinkClassName = 'page-link'
+const pageItemClassName = 'page-item'
+
 const Characters = () => {
     const [characters, setCharacters] = useState<Character[]>([])
     const [page, setPage] = useState(1)
@@ -35,7 +41,7 @@ const Characters = () => {
         fetchCharacters()
     }, [page])
 
-    if (loading) {
+    if (loading && !pageCount) { // show only for initial loading
         return <p>Loading characters, please wait...</p>
     }
 
@@ -58,16 +64,30 @@ const Characters = () => {
     return (
         <>
             <h2>Characters</h2>
-            <div className="characters">{renderCharacters}</div>
-            <ReactPaginate
-                breakLabel="..."
-                nextLabel="next >"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={2}
-                pageCount={pageCount}
-                previousLabel="< previous"
-                renderOnZeroPageCount={null}
-            />
+            <div className={clsx(loading && styles.loadingCharacters)}>{renderCharacters}</div>
+            {!!pageCount &&
+                <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={2}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    renderOnZeroPageCount={null}
+                    containerClassName={clsx('pagination', loading && styles.disabledPagination)}
+                    pageClassName={pageItemClassName}
+                    pageLinkClassName={pageLinkClassName}
+                    breakClassName={pageItemClassName}
+                    breakLinkClassName={pageLinkClassName}
+                    activeClassName='active'
+                    activeLinkClassName={pageLinkClassName}
+                    previousClassName={pageItemClassName}
+                    nextClassName={pageItemClassName}
+                    previousLinkClassName={pageLinkClassName}
+                    nextLinkClassName={pageLinkClassName}
+                    marginPagesDisplayed={3}
+                />
+            }
         </>
     )
 }
