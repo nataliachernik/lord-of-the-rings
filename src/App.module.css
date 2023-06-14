@@ -1,0 +1,19 @@
+.container > div {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container > div:not(:last-of-type) {
+  border-bottom: 2px solid #dadde1;
+}
+
+.home {
+  background-image: url('./staticAssets/hobbit-world.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.home > div {
+  padding: 30% 0;
+}

@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Stack from 'react-bootstrap/Stack'
 
-import {Quote} from '../../models'
+import {Quote} from '../../../common/models'
 import {LooseObject, GameStatus} from './types'
 
 import styles from './Question.module.css'
@@ -32,7 +32,7 @@ const Question: FC<QuestionProps> = ({
     }
 
     return (
-        <Card>
+        <Card className={styles.card}>
             <Card.Header>Quote</Card.Header>
             <Card.Body>
                 <blockquote className={`blockquote ${styles.quoteText}`}>
@@ -61,7 +61,7 @@ const Question: FC<QuestionProps> = ({
                     </Form.Select>
                 </Stack>
                 {(gameStatus === GameStatus.Completed && isInvalid)
-                    && <span>Correct answer: {characterIdMap[quote.character]}</span>
+                    && <div className={styles.correctAnswer}>Correct answer is: {characterIdMap[quote.character]}</div>
                 }
             </Card.Body>
         </Card>

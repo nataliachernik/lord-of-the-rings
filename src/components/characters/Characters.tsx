@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import ReactPaginate from 'react-paginate'
 import clsx from 'clsx'
 
 import fetchData from '../../api/fetchData'
-import {GeneralResponse, Character} from '../../models'
-import TileGrid from '../../common/components/TileGrid/TileGrid'
+import {GeneralResponse, Character} from '../../common/models'
+import TileGrid from '../../common/components/tileGrid/TileGrid'
 import Tile from './tile/Tile'
 
 import styles from './Characters.module.css'
 
-const limitPerPage = 12
+const limitPerPage = 8
 const pageLinkClassName = 'page-link'
 const pageItemClassName = 'page-item'
 
@@ -53,7 +53,7 @@ const Characters = () => {
         return <p>Failed to load characters.</p>
     }
 
-    const handlePageClick = (event: {selected: number}) => {
+    const handlePageClick = (event: { selected: number }) => {
         setPage(event.selected + 1)
     };
 
@@ -63,7 +63,7 @@ const Characters = () => {
             <div className={clsx(loading && styles.loadingCharacters)}>
                 <TileGrid>
                     {characters.map(character => (
-                        <Tile character={character} key={character._id} />
+                        <Tile character={character} key={character._id}/>
                     ))}
                 </TileGrid>
             </div>
@@ -76,7 +76,7 @@ const Characters = () => {
                     pageCount={pageCount}
                     previousLabel="< previous"
                     renderOnZeroPageCount={null}
-                    containerClassName={clsx('pagination', loading && styles.disabledPagination)}
+                    containerClassName={clsx('pagination', styles.pagination, loading && styles.disabledPagination)}
                     pageClassName={pageItemClassName}
                     pageLinkClassName={pageLinkClassName}
                     breakClassName={pageItemClassName}

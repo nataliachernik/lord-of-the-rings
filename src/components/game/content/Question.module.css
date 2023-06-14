@@ -1,3 +1,7 @@
+.card {
+    margin-bottom: 0.5rem;
+}
+
 .quoteText {
     padding: 0 1rem;
     margin-bottom: 1rem;
@@ -14,4 +18,9 @@
 
 .answerSelect {
     max-width: 14rem;
+}
+
+.correctAnswer {
+    margin-top: 0.5rem;
+    color: #198754;
 }

@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 
 import fetchData from '../../api/fetchData'
-import {GeneralResponse, Movie, Character, Quote} from '../../models'
-import {LooseObject} from './types'
-import GameContent from './GameContent'
+import {GeneralResponse, Movie, Character, Quote} from '../../common/models'
+import {LooseObject} from './content/types'
+import GameContent from './content/GameContent'
 
 // todo: might want to move movieName and characterNames to env vars
 const movieName = 'The Fellowship of the Ring'
@@ -112,12 +112,12 @@ function getRandomQuotes(quotes: Quote[]) {
     return indices.map(ind => quotes[ind])
 }
 
-function getRandomQuoteIndices(quotesNumber: number){
+function getRandomQuoteIndices(quotesNumber: number) {
     const indices = []
 
     while (indices.length < questionsNumber) {
         const ind = Math.floor(Math.random() * quotesNumber)
-        if(indices.indexOf(ind) === -1) indices.push(ind)
+        if (indices.indexOf(ind) === -1) indices.push(ind)
     }
 
     return indices

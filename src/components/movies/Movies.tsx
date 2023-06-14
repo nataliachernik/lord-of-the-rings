@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import fetchData from '../../api/fetchData'
-import {GeneralResponse, Movie} from '../../models'
+import {GeneralResponse, Movie} from '../../common/models'
 import Tile from './tile/Tile'
-import TileGrid from '../../common/components/TileGrid/TileGrid'
+import TileGrid from '../../common/components/tileGrid/TileGrid'
 
 const Movies = () => {
     const [movies, setMovies] = useState<Movie[]>([])
@@ -40,7 +40,7 @@ const Movies = () => {
             <h2>Movies</h2>
             <TileGrid>
                 {movies.map(movie => (
-                    <Tile movie={movie} key={movie._id} />
+                    <Tile movie={movie} key={movie._id}/>
                 ))}
             </TileGrid>
         </>
