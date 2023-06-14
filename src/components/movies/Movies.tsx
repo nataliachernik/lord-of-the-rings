@@ -13,7 +13,6 @@ const Movies = () => {
     useEffect(() => {
         const fetchMovies = async () => {
             setLoading(true)
-            setError(false)
 
             try {
                 const {docs: data} = await fetchData<GeneralResponse<Movie>>('movie')

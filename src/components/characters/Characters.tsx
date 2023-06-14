@@ -30,7 +30,9 @@ const Characters = () => {
                 const {
                     docs: data,
                     pages
-                } = await fetchData<GeneralResponse<Character>>(`character?page=${page}&limit=${limitPerPage}`)
+                } = await fetchData<GeneralResponse<Character>>(
+                    `character?sort=name:asc&page=${page}&limit=${limitPerPage}`
+                )
                 setCharacters(data)
                 setPageCount(pages)
             } catch (e) {

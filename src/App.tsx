@@ -2,6 +2,7 @@ import React from 'react';
 
 import Movies from './components/movies/Movies'
 import Characters from './components/characters/Characters'
+import Game from './components/game/Game'
 
 import logo from './logo.svg';
 import './App.css';
@@ -23,8 +24,9 @@ function App() {
           Learn React
         </a>
       </header>
-      <Movies />
-      <Characters />
+        <Movies />
+        <Characters />
+        <Game />
     </div>
   );
 }

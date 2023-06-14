@@ -1,0 +1,17 @@
+.quoteText {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border-left: 2px solid #dadde1;
+}
+
+.answerContainer {
+    align-items: baseline;
+}
+
+.answerLabel {
+    margin-bottom: 0;
+}
+
+.answerSelect {
+    max-width: 14rem;
+}

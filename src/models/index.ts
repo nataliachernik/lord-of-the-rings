@@ -29,3 +29,10 @@ export type Character = {
     realm: string,
     wikiUrl: string
 }
+
+export type Quote = {
+    _id: string,
+    dialog: string,
+    movie: string,
+    character: string
+}
