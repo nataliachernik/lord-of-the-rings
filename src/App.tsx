@@ -2,10 +2,10 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 
-import Header from './pageComponents/header/Header'
-import Game from './components/game/Game'
-import Movies from './components/movies/Movies'
-import Characters from './components/characters/Characters'
+import Header from './common/page/Header'
+import Game from './features/game/Game'
+import Movies from './features/movies/Movies'
+import Characters from './features/characters/Characters'
 
 import styles from './App.module.css'
 
