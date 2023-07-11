@@ -1,5 +1,5 @@
 .card {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .quoteText {
@@ -9,7 +9,7 @@
 }
 
 .answerContainer {
-    align-items: baseline;
+    align-items: center;
 }
 
 .answerLabel {

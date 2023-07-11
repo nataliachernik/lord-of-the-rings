@@ -69,12 +69,12 @@ const Characters = () => {
             </div>
             {!!pageCount &&
                 <ReactPaginate
-                    breakLabel="..."
-                    nextLabel="next >"
+                    breakLabel='...'
+                    nextLabel='>'
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={2}
                     pageCount={pageCount}
-                    previousLabel="< previous"
+                    previousLabel='<'
                     renderOnZeroPageCount={null}
                     containerClassName={clsx('pagination', styles.pagination, loading && styles.disabledPagination)}
                     pageClassName={pageItemClassName}

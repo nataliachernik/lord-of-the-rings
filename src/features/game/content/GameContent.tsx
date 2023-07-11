@@ -40,20 +40,23 @@ const GameContent: FC<GameProps> = ({
             <h2>Game</h2>
             <p className={styles.gameDescription}>
                 Guess which of the characters these quotes belong to? Please select an answer to each quote to be able to see game results.
+                <br />
                 Hint: All quotes are taken from <i>{movieName}</i> movie.
             </p>
-            {quotes.map(
-                quote => (
-                    <Question
-                        quote={quote}
-                        characterIdMap={characterIdMap}
-                        answer={answers[quote._id]}
-                        setAnswer={setAnswer}
-                        gameStatus={gameStatus}
-                        key={quote._id}
-                    />
-                )
-            )}
+            <div className={styles.quotes}>
+                {quotes.map(
+                    quote => (
+                        <Question
+                            quote={quote}
+                            characterIdMap={characterIdMap}
+                            answer={answers[quote._id]}
+                            setAnswer={setAnswer}
+                            gameStatus={gameStatus}
+                            key={quote._id}
+                        />
+                    )
+                )}
+            </div>
             <div className={styles.gameFooter}>
                 {
                     gameStatus === GameStatus.InProgress ? (

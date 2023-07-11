@@ -24,9 +24,10 @@ const Question: FC<QuestionProps> = ({
     gameStatus
 }) => {
     const selectId = `select-character-${quote._id}`
+    const isGameCompleted = gameStatus === GameStatus.Completed
     let isValid = false, isInvalid = false
 
-    if (gameStatus === GameStatus.Completed) {
+    if (isGameCompleted) {
         isValid = answer === quote.character
         isInvalid = answer !== quote.character
     }
@@ -52,6 +53,7 @@ const Question: FC<QuestionProps> = ({
                         isValid={isValid}
                         isInvalid={isInvalid}
                         className={styles.answerSelect}
+                        disabled={isGameCompleted}
                         aria-label="select character"
                     >
                         <option>Select the character</option>
@@ -60,7 +62,7 @@ const Question: FC<QuestionProps> = ({
                         )}
                     </Form.Select>
                 </Stack>
-                {(gameStatus === GameStatus.Completed && isInvalid)
+                {(isGameCompleted && isInvalid)
                     && <div className={styles.correctAnswer}>Correct answer is: {characterIdMap[quote.character]}</div>
                 }
             </Card.Body>

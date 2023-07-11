@@ -16,9 +16,7 @@ function App() {
             <main>
                 <Container className={styles.container}>
                     <div id='home' className={styles.home}>
-                        <Container>
-                            <Button href="#game">Play the Game</Button>
-                        </Container>
+                        <Button href="#game">Play the Game</Button>
                     </div>
                     <div id='game'>
                         <Game/>

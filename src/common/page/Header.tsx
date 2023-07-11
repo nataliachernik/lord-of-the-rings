@@ -2,9 +2,11 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
+import styles from './Header.module.css'
+
 const Header = () => {
     return (
-        <header>
+        <header className={styles.header}>
             <Navbar expand="md" bg='primary' variant='dark' fixed='top'>
                 <Container>
                     <Navbar.Brand href='#home'>Lord of the Rings</Navbar.Brand>

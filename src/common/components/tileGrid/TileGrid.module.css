@@ -2,10 +2,7 @@
     display: grid;
     gap: 0.5rem;
     width: 100%;
-
-    @media (min-width: 576px) {
-        --number-of-columns: 1;
-    }
+    --number-of-columns: 1;
 
     @media (min-width: 768px) {
         --number-of-columns: 2;

@@ -3,7 +3,8 @@
 }
 
 .pagination {
-    margin-top: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .disabledPagination {

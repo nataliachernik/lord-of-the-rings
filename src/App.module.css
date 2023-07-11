@@ -1,19 +1,44 @@
 .container > div {
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 1rem;
-}
-
-.container > div:not(:last-of-type) {
   border-bottom: 2px solid #dadde1;
 }
 
-.home {
-  background-image: url('./staticAssets/hobbit-world.png');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
+.container > div:last-of-type {
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
-.home > div {
-  padding: 30% 0;
+.container .home {
+  --header-height: 56px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  min-height: calc(40vh - var(--header-height));
+  background: url('./staticAssets/hobbit-world.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 0;
+  border-bottom: none;
+
+  @media (min-width: 520px) {
+    min-height: calc(50vh - var(--header-height));
+  }
+
+  @media (min-width: 760px) {
+    min-height: calc(56vh - var(--header-height));
+  }
+
+  @media (min-width: 992px) {
+    min-height: calc(100vh - var(--header-height));
+  }
+}
+
+.home :global(.btn) {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10%;
 }
