@@ -1,10 +1,11 @@
 # Lord of the Rings app
 
+The app consists of the following features:
+- Game
+- Movies
+- Characters
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Live Demo
-
-Navigate to [https://natalia.rrom.me/](https://natalia.rrom.me/)
 
 ## How to run the app locally
 
@@ -38,3 +39,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## API
 The app uses [LOTR API](https://the-one-api.dev/)
+
+## Misc
+`hobbit-world` image was generated using [DALL·E 2](https://openai.com/dall-e-2) 
