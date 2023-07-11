@@ -1,0 +1,14 @@
+.gameDescription,
+.resultsMessage {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.quotes {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gameFooter {
+    text-align: center;
+}

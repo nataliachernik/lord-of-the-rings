@@ -1,0 +1,12 @@
+.loadingCharacters {
+    opacity: 0.5;
+}
+
+.pagination {
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.disabledPagination {
+    pointer-events: none;
+}

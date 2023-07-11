@@ -1,0 +1,26 @@
+.card {
+    margin-bottom: 1rem;
+}
+
+.quoteText {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border-left: 2px solid #dadde1;
+}
+
+.answerContainer {
+    align-items: center;
+}
+
+.answerLabel {
+    margin-bottom: 0;
+}
+
+.answerSelect {
+    max-width: 14rem;
+}
+
+.correctAnswer {
+    margin-top: 0.5rem;
+    color: #198754;
+}
